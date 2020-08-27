@@ -1,39 +1,34 @@
 
 import axios from 'axios'
 import Layout from '../components/Layout'
+import useSWR from 'swr';
+import {useState,useEffect} from 'react';
 
-class Listbook extends React.Component{
+export default function Listbook(){
+    const fetcher = url => axios.get(url).then(res => res.data.response)
+    const { data, error } = useSWR('http://localhost:3001/api/books', fetcher)
+    console.log(data)
 
-    state={
-        books: [],
-    };
-    componentDidMount(){
-        axios.get('http://localhost:3001/api/books')
-        
-        .then(res =>{
-            console.log(res);
-            this.setState({books: res.data.response});
-    
+    /*const[data, setData] = useState([])
+    useEffect(()=> {
+        async function loadData(){
+            const response = await axios('http://localhost:3001/api/books');
+            setData(response.data.response)
 
-        })
-        .catch(err => console.error(err));
-       
-    }
+        }
+        loadData();
 
-    render(){
-
-        const list=<ol>
-        {this.state.books.map((book => <li key={book.book_id}>{book.name}</li>
-            ))}
-    </ol>
-
-        return(
+    },[]);*/
+    return(
+        <div>
             <Layout>
                 <h2>List of all books</h2>
-                {list}
-            </Layout>
-        )
-    }
-}
+        <ol>
+        {data?.map((book => <li key={book.book_id}>{book.name}</li>
+            ))}
+    </ol>
+    </Layout>
+    </div>
+    )
 
-export default Listbook;
+}
