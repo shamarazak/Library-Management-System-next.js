@@ -3,6 +3,7 @@ const Index = ( props) => (
     <Layout>
     <div>
         <h2> Home</h2>
+        
     </div>
    
     </Layout>

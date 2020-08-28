@@ -38,6 +38,16 @@ app.get('/api/books',(req, res) => {
       res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
     });
   });
+  // Registration
+ 
+});
+app.post('/api/registration',(req, res) => {
+  let data = {name: req.body.name, username: req.body.username,email: req.body.email,password: req.body.password};
+  let sql = "INSERT INTO registration SET ?";
+   conn.query(sql, data,(err, results) => {
+    if(err) throw err;
+    res.send(JSON.stringify({"status": 200, "error": null, "response": results}));
+  });
 });
 
 //Server listening
