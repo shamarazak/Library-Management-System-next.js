@@ -29,7 +29,7 @@ class Addbook extends React.Component {
       author: this.state.author,
     };
     axios
-      .post("http://localhost:3001/api/addbooks", data)
+      .post("http://localhost:3001/api/books", data)
       .then((res) => {
         console.log(res);
       })

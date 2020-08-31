@@ -8,7 +8,7 @@ class Register extends React.Component {
 
     this.state = {
       name: "",
-      username: "",
+      studentid: "",
       email: "",
       password: "",
     };
@@ -26,12 +26,12 @@ class Register extends React.Component {
     const data = {
       
       name: this.state.name,
-      username: this.state.username,
+      studentid: this.state.studentid,
       email: this.state.email,
       password: this.state.password,
     };
     axios
-      .post("http://localhost:3001/api/register", data)
+      .post("http://localhost:3001/api/registration", data)
       .then((res) => {
         console.log(res);
       })
@@ -57,12 +57,12 @@ class Register extends React.Component {
               </div>
             </div>
             <div className="form-group row">
-              <label className="col-sm-2 col-form-label">Username:</label>
+              <label className="col-sm-2 col-form-label">Student Id:</label>
               <div className="col-sm-10">
                 <input
                   type="text"
-                  name="username"
-                  id="username"
+                  name="studentid"
+                  id="studentid"
                   onChange={this.handleChange}
                 />
               </div>

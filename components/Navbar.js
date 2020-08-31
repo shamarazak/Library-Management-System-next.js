@@ -25,8 +25,18 @@ const Navbar = () => (
             </Link>
           </li>
           <li className="nav-item">
-            <Link href="/register">
+            <Link href="/registration">
               <a className="nav-link">Registration</a>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link href="/liststudent">
+              <a className="nav-link">All students</a>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link href="/assignbook">
+              <a className="nav-link">Teacher</a>
             </Link>
           </li>
         </ul>

@@ -1,1 +1,1 @@
-self.__BUILD_MANIFEST = {"/":["static\u002Fchunks\u002Fpages\u002Findex.js"],"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/listbook":["static\u002Fchunks\u002Fpages\u002Flistbook.js"]};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
+self.__BUILD_MANIFEST = {"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/assignbook":["static\u002Fchunks\u002Fpages\u002Fassignbook.js"],"/liststudent":["static\u002Fchunks\u002Fpages\u002Fliststudent.js"]};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
